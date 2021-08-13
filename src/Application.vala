@@ -1,3 +1,8 @@
+/*
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2021 Jorge Copia <eycopia@gmail.com>
+ */
+
 public class MyApp : Gtk.Application {
     public MyApp () {
         Object(
@@ -7,21 +12,13 @@ public class MyApp : Gtk.Application {
     }
 
     protected override void activate(){
-        var button_hello = new Gtk.Button.with_label("Click me!"){
-            margin = 12
-        };
-
-        button_hello.clicked.connect(() => {
-            button_hello.label = "Hello world!";
-            button_hello.sensitive = false;
-        });
-
+        var label = new Gtk.Label("Hello Again Worl!");
         var main_window = new Gtk.ApplicationWindow(this) {
             default_height = 300,
             default_width = 300,
             title = "Hello world"
         };
-        main_window.add(button_hello);
+        main_window.add(label);
         main_window.show_all();
     }
 
