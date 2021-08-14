@@ -12,11 +12,11 @@ public class MyApp : Gtk.Application {
     }
 
     protected override void activate(){
-        var label = new Gtk.Label("Hello Again Worl!");
+        var label = new Gtk.Label(_("Hello Again Worl!"));
         var main_window = new Gtk.ApplicationWindow(this) {
             default_height = 300,
             default_width = 300,
-            title = "Hello world"
+            title = _("Hello world")
         };
         main_window.add(label);
         main_window.show_all();
